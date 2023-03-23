@@ -6,7 +6,7 @@ int main(void) {
 	std::string str1;
 	std::string str2 = "c++_insert";
 
-	str1 = str2;	//대입 연산자로 문자열 복사가 가능
+	str1 = str2;
 	std::cout << str1 << std::endl;
 	
 
