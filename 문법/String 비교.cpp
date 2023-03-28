@@ -5,21 +5,16 @@
 using namespace std;
 
 int main(void) {
-	char str1[50] = "aaa";
-	char str2[50] = "aa";
-
-	const int s1_l = strlen(str1);
-	const int s2_l = strlen(str2);
-
+	string str1 = "aaa";
+	string str2 = "aa";
 	
-	int result = strcmp(str1, str2);
-	if (result == -1) {
-		printf("str2>str1");
+	if (str2 > str1) {
+		cout << "str2 > str1";
 	}
-	else if (result == 1) {
-		printf("str1>str2");
+	else if (str1 > str2){
+		cout << "str1 > str2";
 	}
-	else if (result == 0) {
+	else {
 		printf("str1==str2");
 	}
 
