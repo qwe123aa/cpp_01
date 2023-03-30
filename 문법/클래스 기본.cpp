@@ -5,7 +5,9 @@ using namespace std;
 
 //여러 data들을 하나의 의미있는 구조체로 묶어서 관리
 //일반적으로 구조체, 클래스의 단어의 첫 알파벳을 대문자로
-struct student {
+//class는 
+class student {
+public:
 	string name;
 	//성능 때문에 문자열로 하지 않음
 	//일반적으로 문자열은 정수 데이터보다 많은 메모리 공간을 요구하며
