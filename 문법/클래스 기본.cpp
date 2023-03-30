@@ -17,6 +17,14 @@ public:
 	//0 : 남자  //1 : 여자
 	int sex;		//가독성과 유지보수를 위해 열거형(enum)으로 하는 것을 추천
 	string dep;
+
+	void print() {
+		cout << "이름 : " << name << endl;
+		cout << "학번 : " << id << endl;
+		cout << "나이 : " << age << endl;
+		cout << "성별 : " << sex << endl;
+		cout << "학과 : " << dep << endl;
+	}
 };
 
 int main(void) {
@@ -28,11 +36,7 @@ int main(void) {
 	std1.sex = 1;
 	std1.dep = "소프트웨어과";
 
-	cout << "이름 : " << std1.name <<endl;
-	cout <<"학번 : " << std1.id << endl;
-	cout <<"나이 : " << std1.age << endl;
-	cout <<"성별 : " << std1.sex << endl;
-	cout <<"학과 : " << std1.dep << endl;
+	std1.print();
 
 	return 0;
 }
