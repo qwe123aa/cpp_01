@@ -29,7 +29,7 @@ public:
 
 int main(void) {
 	//(struct student) 자료형(c++에서는 student만 써도 됨)
-	struct student std1;
+	student std1;		//동적할당
 	std1.name = "임소영";
 	std1.id = 2115;
 	std1.age = 18;
