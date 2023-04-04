@@ -61,7 +61,7 @@ int main(void) {
 	Lim.height = &h;	
 	Lim.weight = 82;
 
-	cout << Lim.height << endl;		//height가 포인터라 주솟값이 출력됨 
+	cout << *(Lim.height) << endl;		//height가 포인터라 주솟값이 출력됨 
 	cout << Lim.weight << endl;
 	std1.print();
 
