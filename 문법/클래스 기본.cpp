@@ -18,6 +18,14 @@ public:
 		dep = "소프트웨어과";
 	}
 
+	Student(string name_, int id_, int age_, int sex_, string dep_) {
+		name = name_;
+		id = id_;
+		age = age_;
+		sex = sex_;
+		dep = dep_;
+	}
+
 	//class는 멤버변수를 가질 수 있다.
 	void print(void) {
 		cout << "이름 : " << name << endl;
@@ -42,7 +50,7 @@ private:
 int main(void) {
 	//(struct student) 자료형(c++에서는 student만 써도 됨)
 	//Student std1;
-	Student std1 = Student();		//동적할당
+	Student std1 = Student("임소영", 2100, 18, 1, "뉴솦과");		//동적할당
 
 	std1.print();
 
