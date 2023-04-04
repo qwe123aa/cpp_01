@@ -5,7 +5,7 @@ using namespace std;
 
 struct Person {
 	int weight;
-	int* height;
+	int height;
 };
 //여러 data들을 하나의 의미있는 구조체로 묶어서 관리
 //일반적으로 구조체, 클래스의 단어의 첫 알파벳을 대문자로
@@ -56,12 +56,11 @@ int main(void) {
 	//Student std1;
 	Student std1 = Student("임소영", 2100, 18, 1, "뉴솦과");		//동적할당
 
-	int h = 186;
 	struct Person Lim;
-	Lim.height = &h;	
+	Lim.height = 186;	
 	Lim.weight = 82;
 
-	cout << *(Lim.height) << endl;		//height가 포인터라 주솟값이 출력됨 
+	cout << Lim.height << endl;		//height가 포인터라 주솟값이 출력됨 
 	cout << Lim.weight << endl;
 	std1.print();
 
