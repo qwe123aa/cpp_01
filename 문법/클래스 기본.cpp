@@ -27,12 +27,13 @@ public:
 		dep = "소프트웨어과";
 	}
 
-	Student(string name, int id, int age, int sex, string dep) {
-		this->name = name;
-		this->id = id;
-		this->age = age;
-		this->sex = sex;
-		this->dep = dep;
+	Student(string name_, int id_, int age_, int sex_, string dep_)
+		: name(name_), id(id_), age(age_), sex(sex_), dep(dep_) {
+		//this->name = name;
+		//this->id = id;
+		//this->age = age;
+		//this->sex = sex;
+		//this->dep = dep;
 	}
 
 	//class는 멤버변수를 가질 수 있다.
