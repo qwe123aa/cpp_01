@@ -85,9 +85,11 @@ int main(void) {
 	cout << "대사 : " << (*ptr).dialog << endl;
 
 	//동적할당
-	//TODO:동적할당 해제하기
 	Student* stu2 = new Student("서강준",3110, 32, 0, "방송연애과");
 	stu2->print();
+
+	delete stu2;
+
 
 	return 0;
 }
