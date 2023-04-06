@@ -70,7 +70,9 @@ int main(void) {
 	cout << Lim.weight << endl;
 	std1.print();
 
+	//정적할당
 	Student stu1 = Student("임소영", 2115, 18, 1, "뉴미디어소프트웨어과");
+	//std1.print();
 
 	struct Actor KYLee;
 
@@ -81,6 +83,11 @@ int main(void) {
 	//ptr->name, (*ptr).name 같은 결과
 	cout << "이름 : " << ptr->name << endl;
 	cout << "대사 : " << (*ptr).dialog << endl;
+
+	//동적할당
+	//TODO:동적할당 해제하기
+	Student* stu2 = new Student("서강준",3110, 32, 0, "방송연애과");
+	stu2->print();
 
 	return 0;
 }
