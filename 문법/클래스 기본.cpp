@@ -3,6 +3,11 @@
 
 using namespace std;
 
+struct Actor {
+	string name;
+	string dialog;
+};
+
 struct Person {
 	int weight;
 	int height;
@@ -20,6 +25,14 @@ public:
 		age = 18;
 		sex = 1;
 		dep = "소프트웨어과";
+	}
+
+	Student(string name, int id, int age, int sex, string dep) {
+		this->name = name;
+		this->id = id;
+		this->age = age;
+		this->sex = sex;
+		this->dep = dep;
 	}
 
 	//class는 멤버변수를 가질 수 있다.
@@ -55,6 +68,18 @@ int main(void) {
 	cout << Lim.height << endl;		//height가 포인터라 주솟값이 출력됨 
 	cout << Lim.weight << endl;
 	std1.print();
+
+	Student stu1 = Student("임소영", 2115, 18, 1, "뉴미디어소프트웨어과");
+
+	struct Actor KYLee;
+
+	KYLee.name = "이경영";
+	KYLee.dialog = "진행시켜";
+
+	struct Actor* ptr = &KYLee;
+	//ptr->name, (*ptr).name 같은 결과
+	cout << "이름 : " << ptr->name << endl;
+	cout << "대사 : " << (*ptr).dialog << endl;
 
 	return 0;
 }
