@@ -70,9 +70,13 @@ int main(void) {
 	cout << Lim.weight << endl;
 	std1.print();
 
-	//정적할당
+	//정적할당 : 메모리의 크기가 컴파일할 때 결정됨
 	Student stu1 = Student("임소영", 2115, 18, 1, "뉴미디어소프트웨어과");
 	//std1.print();
+
+	//정적할당 :  메모리의 크기가 실행할 때(runtime) 결정됨, heap영역
+	Student* stu2 = new Student("임소영", 2115, 18, 1, "뉴미디어소프트웨어과");
+	stu2->print();
 
 	struct Actor KYLee;
 
