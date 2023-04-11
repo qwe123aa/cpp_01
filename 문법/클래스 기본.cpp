@@ -45,6 +45,15 @@ public:
 		cout << "학과 : " << dep << endl;
 	}
 
+	void set_name(string name_) { name = name_; }
+	void set_id(int id_) { id = id_; }
+	void set_age(int age_) { age = age_; }
+	void set_sex(int sex_) { sex = sex_; }
+	void set_dep(string dep_) { dep = dep_; }
+
+
+
+
 private:
 	string name;
 	//성능 때문에 문자열로 하지 않음
@@ -80,31 +89,45 @@ int main(void) {
 
 	//동적할당 :  메모리의 크기가 실행할 때(runtime) 결정됨, heap영역
 	//c++의 동적할당은 반드시 delete로 해제해야 메모리 누수를 막을 수 있음.
-	Student* stu2 = new Student("임소영", 2115, 18, 1, "뉴미디어소프트웨어과");
-	stu2->print();
-	Student* stu4 = new Student[2];
-	for (int i = 0; i < 2; i++) {
-		stu4[i].print();	//배열의 요소에 해당하는 객체는 멤버를 .으로 접근
-	}
-	delete[] stu4
+	//Student* stu2 = new Student("임소영", 2115, 18, 1, "뉴미디어소프트웨어과");
+	//stu2->print();
+	//Student* stu4 = new Student[2];
+	//for (int i = 0; i < 2; i++) {
+	//	stu4[i].print();	//배열의 요소에 해당하는 객체는 멤버를 .으로 접근
+	//}
+	//delete[] stu4;
 
-	delete stu2;
+	//delete stu2;
 
-	struct Actor KYLee;
+	Student* std4 = new Student[2];
+	std4[0].set_age(18);
+	std4[0].set_name("지수");
+	std4[0].set_id(2112);
+	std4[0].set_sex(1);
+	std4[0].set_dep("뉴미디어소프트웨어과");
 
-	KYLee.name = "이경영";
-	KYLee.dialog = "진행시켜";
+	std4[0].set_age(18);
+	std4[0].set_name("혁수");
+	std4[0].set_id(2118);
+	std4[0].set_sex(0);
+	std4[0].set_dep("뉴미디어소프트웨어과");
 
-	struct Actor* ptr = &KYLee;
-	//ptr->name, (*ptr).name 같은 결과
-	cout << "이름 : " << ptr->name << endl;
-	cout << "대사 : " << (*ptr).dialog << endl;
+
+	//struct Actor KYLee;
+
+	//KYLee.name = "이경영";
+	//KYLee.dialog = "진행시켜";
+
+	//struct Actor* ptr = &KYLee;
+	////ptr->name, (*ptr).name 같은 결과
+	//cout << "이름 : " << ptr->name << endl;
+	//cout << "대사 : " << (*ptr).dialog << endl;
 
 	////동적할당
 	//Student* stu2 = new Student("서강준",3110, 32, 0, "방송연애과");
 	//stu2->print();
 
-	delete stu2;
+
 
 
 	return 0;
