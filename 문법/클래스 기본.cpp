@@ -58,9 +58,13 @@ private:
 };
 
 int main(void) {
+	Student stu3[2];
+	for (int i = 0; i < sizeof(stu3)/sizeof(Student); i++) {
+		stu3[i].print();
+	}
 	//(struct student) 자료형(c++에서는 student만 써도 됨)
 	//Student std1;
-	Student std1 = Student();		//동적할당
+	Student std1 = Student();
 
 	struct Person Lim;
 	Lim.height = 186;	
@@ -74,9 +78,17 @@ int main(void) {
 	Student stu1 = Student("임소영", 2115, 18, 1, "뉴미디어소프트웨어과");
 	//std1.print();
 
-	//정적할당 :  메모리의 크기가 실행할 때(runtime) 결정됨, heap영역
+	//동적할당 :  메모리의 크기가 실행할 때(runtime) 결정됨, heap영역
+	//c++의 동적할당은 반드시 delete로 해제해야 메모리 누수를 막을 수 있음.
 	Student* stu2 = new Student("임소영", 2115, 18, 1, "뉴미디어소프트웨어과");
 	stu2->print();
+	Student* stu4 = new Student[2];
+	for (int i = 0; i < 2; i++) {
+		stu4[i].print();	//배열의 요소에 해당하는 객체는 멤버를 .으로 접근
+	}
+	delete[] stu4
+
+	delete stu2;
 
 	struct Actor KYLee;
 
@@ -88,9 +100,9 @@ int main(void) {
 	cout << "이름 : " << ptr->name << endl;
 	cout << "대사 : " << (*ptr).dialog << endl;
 
-	//동적할당
-	Student* stu2 = new Student("서강준",3110, 32, 0, "방송연애과");
-	stu2->print();
+	////동적할당
+	//Student* stu2 = new Student("서강준",3110, 32, 0, "방송연애과");
+	//stu2->print();
 
 	delete stu2;
 
