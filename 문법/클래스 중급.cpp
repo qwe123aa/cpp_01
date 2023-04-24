@@ -13,6 +13,10 @@ public:
 		strcpy(c_str_, str);
 	}
 
+	//소멸자(destructor)
+	~MString() {
+		delete[] c_str_;	//생성자에 동적할당한 공간 해제
+	}
 	
 	unsigned int size() { return size_; }
 	char* c_str() { return c_str_; }
@@ -30,7 +34,7 @@ int main(void) {
 	cout << str->c_str() << endl;
 
 	//str에 대한 delete는 진행되었으나, str->c_str_에 대한 delete가 진행되지않음
-	//TODO:이를 delete해주는 소멸자(destructor)구현하기
+	//TODO : 이를 delete해주는 소멸자(destructor)구현하기
 	delete str;
 
 	return 0;
