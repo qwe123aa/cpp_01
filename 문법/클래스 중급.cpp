@@ -16,6 +16,7 @@ public:
 	}
 
 	//복사생성자(별도로 정의하지 않으면 컴파일러가 아래와 같은 복사 생성자를 만들어냄)
+	//TODO : 복사된 객체가 소멸될 때 발생하는 에러를 해결하고자
 	MString(const MString& rhs)
 		: size_(rhs.size_), c_str_(rhs.c_str_)
 	{
