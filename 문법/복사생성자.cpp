@@ -15,7 +15,7 @@ public:
 	}
 
 	//소멸자
-	~Munja() {
+	~Munja() { 
 		delete[] str_;
 		cout << "소멸자 호출" << endl;
 	}
