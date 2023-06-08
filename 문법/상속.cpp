@@ -42,7 +42,7 @@ class Rabbit : public Animal {
 public:
 	//매개변수가 없는 부모 생성자가 자동으로 먼저 호출된다
 	//부모생성자(Animal(color, age))가 먼저 호출
-	Rabbit(int color, int age, int ear_length) : Animal(color, age) { 
+	Rabbit(int color, int age, int ear_length) : Animal(color, age), ear_length_(ear_length) {
 		cout << "Rabbit 생성자()" << endl; 
 		cout << "귀 길이 " << ear_length_ << endl;
 	}
