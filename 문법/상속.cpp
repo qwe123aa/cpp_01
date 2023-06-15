@@ -1,37 +1,22 @@
 ﻿#include <iostream>
-
 using namespace std;
 
 #define COLOR_RED		0
 #define COLOR_GREEN		1
 #define COLOR_BLUE		2
 
+
 class Animal {
 public:
-	Animal(int color, int age) : color_(color), age_(age) { 
+	Animal(int color, int age) : color_(color), age_(age)
+	{
 		cout << "Animal 생성자()" << endl;
-		cout << age_ << "살" << endl;
-
-		switch (color_) {
-		case COLOR_RED:
-			cout << "빨간색" << endl;
-			break;
-		case COLOR_GREEN:
-			cout << "초록색" << endl;
-			break;
-		case COLOR_BLUE:
-			cout << "파란색" << endl;
-			break;
-		default:
-			cout << "이상한색" << endl;
-			break;
-		}
-
 	}
-	~Animal() { cout << "Animal 소멸자()" << endl; }
-	void Bite(void) { cout << "Animal 물다" << endl; }
+	virtual ~Animal() { cout << "Animal 소멸자()" << endl; }
+	// 가상함수 : Java처럼 동적바인딩
+	virtual void Roar(void) { cout << "Animal 짖다" << endl; }
 	void Eat(void) { cout << "Animal 먹다" << endl; }
-	void Sleep(void) { cout << "Animal자다" << endl; }
+	void Sleep(void) { cout << "Animal 자다" << endl; }
 
 private:
 	int color_;
@@ -40,20 +25,29 @@ private:
 
 class Rabbit : public Animal {
 public:
-	//매개변수가 없는 부모 생성자가 자동으로 먼저 호출된다
-	//부모생성자(Animal(color, age))가 먼저 호출
-	Rabbit(int color, int age, int ear_length) : Animal(color, age), ear_length_(ear_length) {
-		cout << "Rabbit 생성자()" << endl; 
-		cout << "귀 길이 " << ear_length_ << endl;
+	// 부모생성자(Animal(color, age))가 먼저 호출
+	Rabbit(int color, int age, int ear_length) : Animal(color, age), ear_length_(ear_length)
+	{
+		cout << "Rabbit 생성자()" << endl;
 	}
-	~Rabbit() { cout << "Rabbit 소멸자()" << endl; }
+	virtual ~Rabbit() { cout << "Rabbit 소멸자()" << endl; }
+
+	// 함수 override
+	// 다형성(polymorphism) : 시그니쳐(반환형, 이름, 매개변수가 모두 같은)가 같은 함수임에도 
+	// 불구하고 다르게 실행되는 것
+	// override : 부모 함수 시그니쳐가 존재하지 않으면 에러발생(실수방지)
+	void Roar(void) override
+	{
+		cout << "깡총깡총" << endl;
+	}
 
 private:
 	int ear_length_;
 };
 
-int main(void) {
-	Rabbit* rabbit = new Rabbit(COLOR_RED, 3, 20);	//부모의 생성자도 호출
-	rabbit->Bite();	//부모의 멤버함수 호출
-	delete rabbit;
+int main(void)
+{
+	Animal* animal = new Rabbit(COLOR_RED, 3, 20);
+	animal->Roar();	// 깡총 깡총
+	delete animal;
 }
