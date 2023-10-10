@@ -16,6 +16,13 @@ int main(void) {
 	//4개가 꽉찬 공간에 데이터를 하나 더 집어넣어보자
 	arr.push_back(50);
 
+	//원소의 주소를 나타내는 반복자(iterator)
+	vector<int>::iterator iter;
+
+	for (iter = arr.begin(); iter != arr.end(); iter++) {
+		cout << *iter << " ";
+	}
+
 	for (int i = 0; i < 4; i++)
 		cout << arr[i] << " ";
 
