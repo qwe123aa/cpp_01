@@ -8,7 +8,9 @@ class Champ {
 public:
 	//함수 선언
 	Champ(const string& name);
+	//static 멤버함수에는 일반 멤버변수가 들어갈 수 없다
 	static int get_cnt() {
+		non_static = 1;	//이 변수는 무조건 객체가 생성되어야 함
 		return cnt_;
 	}
 
